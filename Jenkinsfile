@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('continuous download') {
+        stage('continuous downloading the project') {
             steps {
             git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'    
             }
         }
         stage('continuous build') {
             steps {
-            sh 'mvn install'    
+            sh 'mvn install'
+    
             }
         }
          stage('continuous deploy') {
